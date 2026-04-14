@@ -8,11 +8,14 @@ export default {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: { "2xl": "1400px" },
     },
     extend: {
+      fontFamily: {
+        heading: ["Libre Franklin", "sans-serif"],
+        body: ["Libre Franklin", "sans-serif"],
+        logo: ["MuseoModerno", "cursive"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +60,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        aziz: {
+          navy: "hsl(var(--aziz-navy))",
+          blue: "hsl(var(--aziz-blue))",
+          green: "hsl(var(--aziz-green))",
+          yellow: "hsl(var(--aziz-yellow))",
+          gray: "hsl(var(--aziz-gray))",
+          "gray-dark": "hsl(var(--aziz-gray-dark))",
+          light: "hsl(var(--aziz-light))",
+          lighter: "hsl(var(--aziz-lighter))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -64,26 +77,14 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
+        "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
+        "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
+        "fade-in": { from: { opacity: "0", transform: "translateY(8px)" }, to: { opacity: "1", transform: "translateY(0)" } },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.4s ease-out",
       },
     },
   },
